@@ -1,0 +1,38 @@
+/* reset.css — normalize.css simplificado */
+/* Aplica margem e padding zero a todos os elementos e pseudo-elementos */
+*,
+*::before,
+*::after {
+  margin: 0;              /* Remove espaçamento padrão */
+  padding: 0;             /* Remove espaçamento interno */
+  box-sizing: border-box; /* Inclui padding e border na largura/altura */
+}
+
+/* Garante que html e body ocupem toda a altura do viewport */
+html, body {
+  height: 100%;          /* Facilita uso de 100vh e layouts flexíveis */
+}
+
+/* Remove marcadores de lista em elementos <ul> */
+ul {
+  list-style: none;      /* Desabilita bullets padrão */
+}
+
+/* Remove sublinhado de links e herda cor do pai */
+a {
+  text-decoration: none; /* Remove sublinhado */
+  color: inherit;        /* Usa cor definida no elemento pai */
+}
+
+/* Garante que imagens não ultrapassem sua largura de contêiner */
+img {
+  max-width: 100%;       /* Escala responsivamente */
+  display: block;        /* Remove espaço em linha ao redor */
+}
+
+/* Estiliza botões: cursor de ponteiro e remove estilos padrão */
+button {
+  cursor: pointer;       /* Indica que é clicável */
+  background: none;      /* Remove fundo padrão */
+  border: none;          /* Remove bordas padrão */
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Define codificação UTF-8 para suporte a caracteres especiais -->
+  <meta charset="UTF-8">
+  <!-- Ajusta viewport para responsividade em dispositivos móveis -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Título da página exibido na aba do navegador -->
+  <title>Contato — Loja Virtual</title>
+  <!-- Descrição para SEO, facilitando indexação nos motores de busca -->
+  <meta name="description" content="Fale conosco via formulário.">
+  <!-- Reset CSS para normalizar estilos entre navegadores -->
+  <link rel="stylesheet" href="css/reset.css">
+  <!-- Estilos principais da aplicação -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="contact-page">
+  <!-- Cabeçalho com menu de navegação principal -->
+  <header>
+    <nav>
+      <!-- Botão para alternar menu em telas pequenas (toggle via JS) -->
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li class="cart-item">
+          <a href="carrinho.html">
+            Carrinho
+            <!-- Badge dinâmica mostrando quantidade de itens no carrinho -->
+            <span id="cart-count" class="badge">0</span>
+          </a>
+        </li>
+        <!-- Link ativo destacado com classe 'active' -->
+        <li><a href="contato.html" class="active">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal contendo formulário de contato -->
+  <main>
+    <section class="contact fade-in">
+      <!-- Título da seção -->
+      <h1>Fale Conosco</h1>
+      <!-- Formulário com validação nativa HTML e via JS -->
+      <form id="form-contato" novalidate>
+        <!-- Campo Nome: obrigatório, mínimo 2 caracteres -->
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required minlength="2">
+
+        <!-- Campo Email: obrigatório, tipo email para validação básica -->
+        <label for="email">E‑mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <!-- Campo Mensagem: obrigatório, mínimo 10 caracteres -->
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" required minlength="10"></textarea>
+
+        <!-- Botão de envio, estilizado pela classe btn-primary -->
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+      <!-- Container para exibir feedback de validação via JS -->
+      <div id="form-feedback"></div>
+    </section>
+  </main>
+
+  <!-- Container para exibir toasts (notificações) via JS -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Rodapé com direitos autorais -->
+  <footer>
+    <p>&copy; 2025 NLM Periféricos</p>
+  </footer>
+
+  <!-- Scripts JS:
+       main.js para interações gerais (menu, toasts, carrinho)
+       validation.js para validação customizada do formulário
+       cart.js para gerenciar o carrinho de compras -->
+  <script src="js/main.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

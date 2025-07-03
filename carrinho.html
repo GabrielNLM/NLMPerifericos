@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Define codificação de caracteres UTF-8 para suportar acentuação e caracteres especiais -->
+  <meta charset="UTF-8" />
+  <!-- Ajusta viewport para garantir responsividade em dispositivos móveis -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Título da página exibido na aba do navegador -->
+  <title>Carrinho — Loja Virtual</title>
+  <!-- Descrição para SEO, indicando que esta é a página de carrinho -->
+  <meta name="description" content="Seu carrinho de compras." />
+  <!-- Reset CSS para normalizar estilos entre navegadores -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <!-- Estilos principais da aplicação -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Cabeçalho com menu de navegação principal -->
+  <header>
+    <nav>
+      <!-- Botão para alternar menu em dispositivos móveis (toggle via JS) -->
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li class="cart-item">
+          <!-- Link ativo para a página atual marcado com 'active' -->
+          <a href="carrinho.html" class="active">
+            Carrinho
+            <!-- Badge que exibe a quantidade de itens no carrinho dinamicamente -->
+            <span id="cart-count" class="badge">0</span>
+          </a>
+        </li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal da página de carrinho -->
+  <main>
+    <section class="cart-section fade-in">
+      <!-- Título da seção -->
+      <h1>Seu Carrinho</h1>
+      <!-- Container que receberá dinamicamente os itens do carrinho via JS -->
+      <div id="cart-items"></div>
+      <!-- Mensagem exibida quando o carrinho está vazio -->
+      <p id="empty-msg">O carrinho está vazio.</p>
+      <!-- Botão de checkout, escondido inicialmente, exibido quando houver itens -->
+      <button id="checkout-btn" class="btn btn-primary" style="display:none;">
+        Finalizar Compra
+      </button>
+    </section>
+  </main>
+
+  <!-- Container para exibir toasts (notificações) via JS -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Rodapé com direitos autorais -->
+  <footer>
+    <p>&copy; 2025 NLM Periféricos</p>
+  </footer>
+
+  <!-- Scripts JS:
+       main.js para interações gerais (menu, toasts)
+       cart.js para lógica de gerenciamento do carrinho (adicionar, remover, checkout) -->
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

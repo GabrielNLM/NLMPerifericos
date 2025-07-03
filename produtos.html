@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Define a codificação de caracteres para suportar acentuação e caracteres especiais -->
+  <meta charset="UTF-8">
+  <!-- Configura o viewport para responsividade em dispositivos móveis -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Título da página exibido na aba do navegador -->
+  <title>Produtos — Loja Virtual</title>
+  <!-- Descrição para SEO, aparece em resultados de busca e facilita indexação -->
+  <meta name="description" content="Catálogo de produtos da loja – Mouse Gamer Redragon Cobra">
+  <!-- Reset CSS para normalizar estilos entre navegadores -->
+  <link rel="stylesheet" href="css/reset.css">
+  <!-- Estilos principais do site -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="produtos-page">
+  <!-- Cabeçalho com navegação principal -->
+  <header>
+    <nav>
+      <!-- Botão para alternar menu em telas pequenas (implementação via JS) -->
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <!-- Link da página atual marcado com classe 'active' -->
+        <li><a href="produtos.html" class="active">Produtos</a></li>
+        <li class="cart-item">
+          <a href="carrinho.html">
+            Carrinho
+            <!-- Badge que mostra quantidade de itens no carrinho dinamicamente -->
+            <span id="cart-count" class="badge">0</span>
+          </a>
+        </li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal da página de produtos -->
+  <main>
+    <section class="products-section">
+      <!-- Título da seção com efeito de slide-up via CSS/JS -->
+      <h1 class="slide-up">Nossos Produtos</h1>
+      <!-- Grid responsivo de cards de produto -->
+      <div class="product-grid">
+        <!-- Início do Card do Mouse Gamer -->
+        <div class="product-card slide-up">
+          <!-- Imagem do produto com alt para acessibilidade/SEO -->
+          <img src="img/mouse.png" alt="Mouse Gamer Redragon Cobra" class="product-img">
+          <!-- Nome do produto -->
+          <h3 class="product-title">Mouse Gamer Redragon Cobra</h3>
+          <!-- Lista de especificações técnicas do produto -->
+          <ul class="product-specs">
+            <li>DPI até 12400</li>
+            <li>Polling Rate 1000 Hz</li>
+            <li>8 botões programáveis</li>
+            <li>Cabo trançado 1.8 m</li>
+          </ul>
+          <!-- Preço com classe para estilização específica -->
+          <p class="price">R$ 179,90</p>
+          <!-- Botões de ação: adicionar ao carrinho e ver detalhes -->
+          <div class="product-buttons">
+            <!-- Botão que dispara lógica de adicionar item via JS, usando data-id para identificar produto -->
+            <button class="btn btn-primary add-to-cart" data-id="mouse">
+              Adicionar ao Carrinho
+            </button>
+            <!-- Link para página de detalhes do produto -->
+            <a href="produto-mouse.html" class="btn btn-secondary">Ver Produto</a>
+          </div>
+        </div>
+        <!-- Fim do Card do Mouse Gamer -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Container para exibir toasts (notificações) via JS -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Rodapé com direitos autorais -->
+  <footer>
+    <p>&copy; 2025 NLM Periféricos</p>
+  </footer>
+
+  <!-- Script principal para interações gerais do site -->
+  <script src="js/main.js"></script>
+</body>
+</html>

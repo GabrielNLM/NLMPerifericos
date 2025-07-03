@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Define a codificação de caracteres para suportar acentuação e caracteres especiais -->
+  <meta charset="UTF-8">
+  <!-- Configura o viewport para responsividade em dispositivos móveis -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Título da página exibido na aba do navegador -->
+  <title>Início — Loja Virtual</title>
+  <!-- Descrição para SEO básico, aparece em resultados de busca -->
+  <meta name="description" content="Loja virtual Simplificada.">
+  <!-- Reset CSS para normalizar estilos entre navegadores -->
+  <link rel="stylesheet" href="css/reset.css">
+  <!-- Estilos principais do site -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Estilos inline para configurações de layout global e hero -->
+  <style>
+  /* Define altura mínima e remove margens/paddings, bloqueia scroll horizontal */
+  html, body {
+    height: 100%;            /* Garante cobertura completa do viewport */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;      /* Impede rolagem horizontal */
+  }
+
+  /* Configura imagem de fundo para toda a página, cobrindo sempre todo o viewport */
+  body {
+    background-image: url('img/fundosite.png');
+    background-size: cover;           /* Ajusta imagem para cobrir toda a área */
+    background-position: center top;  /* Centraliza horizontalmente e alinha topo */
+    background-repeat: no-repeat;     /* Evita repetição da imagem */
+    background-attachment: fixed;     /* Mantém a imagem fixa no viewport */
+    min-height: 100vh;                /* Garante altura mínima igual à da tela */
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Main expande para preencher espaço disponível */
+  main {
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;                 /* Esconde conteúdos que saiam da área */
+  }
+
+  /* Seção hero com altura mínima de 100vh */
+  .hero {
+    position: relative;
+    text-align: center;               /* Centraliza texto */
+    padding: 4rem 1rem;
+    flex-shrink: 0;
+    min-height: 100vh;                /* Garante altura igual à da tela */
+    z-index: 0;
+  }
+
+  /* Camada semitransparente sobre a hero para contraste */
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;                     /* Cobre toda a área da hero */
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;                      /* Envia atrás do conteúdo */
+  }
+
+  /* Cores e sombras para o texto dentro da hero */
+  .hero h1, .hero p {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Estilo do rodapé */
+  footer {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Ajustes responsivos para telas pequenas */
+  @media (max-width: 768px) {
+    body {
+      background-position: center top 35px;
+    }
+
+    .hero {
+      padding: 3rem 1rem;
+      min-height: 100vh;
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+    }
+  }
+</style>
+</head>
+<body>
+  <!-- Cabeçalho com navegação principal -->
+  <header>
+    <nav>
+      <!-- Botão para togglar menu em mobile (pode ser implementado via JS) -->
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+      <ul class="menu">
+        <!-- Link ativo destacado com classe .active -->
+        <li><a href="index.html" class="active">Início</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li class="cart-item">
+          <a href="carrinho.html">
+            Carrinho
+            <!-- Badge dinâmico que mostra quantidade de itens no carrinho -->
+            <span id="cart-count" class="badge">0</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal do site -->
+  <main>
+    <!-- Seção de boas-vindas (hero) com fade-in via classe JS/CSS -->
+    <section class="hero fade-in">
+      <h1>Bem‑vindo à NLM Periféricos</h1>
+      <p>Os melhores produtos com entrega rápida.</p>
+      <!-- Botão que leva à página de produtos -->
+      <a href="produtos.html" class="btn btn-primary">Ver Produtos</a>
+    </section>
+  </main>
+
+  <!-- Container para exibir toasts (notificações) via JS -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Rodapé com direitos autorais -->
+  <footer>
+    <p>&copy; 2025 NLM Periféricos</p>
+  </footer>
+
+  <!-- Scripts JS: main.js para interações gerais, cart.js para carrinho -->
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>
