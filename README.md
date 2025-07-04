@@ -36,7 +36,7 @@ Todas as imagens foram utilizadas **exclusivamente para fins educacionais**, sem
 
 ## 👨‍💻 Autor
 
-**Gabriel NLM**  
+**Gabriel Nunes Lima Mesquita**  
 Desenvolvedor Front-End – Projeto acadêmico realizado em 2025
 
 ---
