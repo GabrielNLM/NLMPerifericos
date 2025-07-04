@@ -41,4 +41,4 @@ Desenvolvedor Front-End – Projeto acadêmico realizado em 2025
 
 ---
 
-© 2025 – Projeto de estudo da disciplina *Programação Front-End* | **Unicesumar**
+2025 – Projeto de estudo da disciplina *Programação Front-End* | **Unicesumar**
